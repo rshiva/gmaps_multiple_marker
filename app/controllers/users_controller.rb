@@ -17,8 +17,7 @@ class UsersController < ApplicationController
 				@values << item
 		  end
     end	
-    puts "===>",@values
-    render :partial => "maps" , :locals => {:values => @value}
+    render action: :show , :locals => {:values => @values}
 	end
 
 
