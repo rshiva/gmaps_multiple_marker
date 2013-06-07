@@ -17,12 +17,8 @@
 
   setMarkers(map, beaches);
 }
-
-var beaches = [
-  ['Mumbai',"18.9647", "72.8258"],
-  ['Pune','18.5236','73.8478'],
-  ['china',"32.9043","110.4677"]
-  ];
+ var coordinates_csv_values= $('#map-canvas').data('cord-values');
+ var beaches = coordinates_csv_values;
 
 function setMarkers(map, locations) {
 
@@ -46,20 +42,20 @@ function setMarkers(map, locations) {
   var bounds = new google.maps.LatLngBounds();
   for (var i = 0; i < locations.length; i++) {
     var beach = locations[i];
-    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
+    var myLatLng = new google.maps.LatLng(beach[0], beach[1]);
     var marker = new google.maps.Marker({
         position: myLatLng,
         map: map,
         shadow: shadow,
         icon: image,
-        shape: shape,
-        title: beach[0],
-        zIndex: beach[3]
+        shape: shape
+      /*  title: beach[0],
+        zIndex: beach[3] */
+        
     });
     bounds.extend(myLatLng);
   }
   map.fitBounds(bounds);
-  alert($('#map-canvas').data('cord-values'));
 }
 google.maps.event.addDomListener(window, 'load', initialize);   
 /*https://developers.google.com/maps/documentation/javascript/examples/icon-complex?hl=fr-FR */

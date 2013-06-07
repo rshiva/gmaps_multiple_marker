@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 	require "csv"
 
 	def show
-		puts "====>",@values
 	end
 
 
