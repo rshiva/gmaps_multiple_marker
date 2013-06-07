@@ -5,3 +5,60 @@
             ["Location 4", "Mt Hermon Rock Creek Rd", "Graham", "NC", "27253", "35.9826328", "-79.4165216"],
             ["Location 5", "415 Spring Garden St", "Greensboro", "NC", "27401", "36.06761", "-79.794984"]
         ];   
+
+
+        
+ /*
+  function initialize() {
+  var mapOptions = {
+    zoom: 10,
+    center: new google.maps.LatLng(0,0),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+                                mapOptions);
+
+  setMarkers(map, beaches);
+}
+ var coordinates_csv_values= $('#map-canvas').data('cord-values');
+var beaches = coordinates_csv_values;
+
+function setMarkers(map, locations) {
+
+  
+  var image = {
+    url: '/assets/pin.png',
+    size: new google.maps.Size(20, 32),
+    origin: new google.maps.Point(0,0),
+    anchor: new google.maps.Point(0, 32)
+  };
+  var shadow = {
+    url: '/assets/pin.png',
+    size: new google.maps.Size(37, 32),
+    origin: new google.maps.Point(0,0),
+    anchor: new google.maps.Point(0, 32)
+  };
+  var shape = {
+      coord: [1, 1, 1, 20, 18, 20, 18 , 1],
+      type: 'poly'
+  };
+  var bounds = new google.maps.LatLngBounds();
+  for (var i = 0; i < locations.length; i++) {
+    var beach = locations[i];
+    var myLatLng = new google.maps.LatLng(beach[0], beach[1]);
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        shadow: shadow,
+        icon: image,
+        shape: shape
+      /*  title: beach[0],
+        zIndex: beach[3] */
+        
+    });
+    bounds.extend(myLatLng);
+  }
+  map.fitBounds(bounds);
+}
+google.maps.event.addDomListener(window, 'load', initialize);  */ 
+/*https://developers.google.com/maps/documentation/javascript/examples/icon-complex?hl=fr-FR */

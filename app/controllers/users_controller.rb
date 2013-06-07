@@ -1,10 +1,6 @@
 class UsersController < ApplicationController
 	require "csv"
 
-	def show
-	end
-
-
 	def import
 
 	end
