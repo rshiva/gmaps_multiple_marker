@@ -1,71 +1,10 @@
  <%= content_tag :div ,:id => "map-canvas",:style => "height: 500px; width: 800px;" ,data: {cord_values: values} do%>
     We gonna see all the google maps here
-    <%= values%>
  <% end %>
 
 
  <%= javascript_tag do %>
-  var coordinates_csv_values= $('#map-canvas').data('cord-values');
-  var beaches = coordinates_csv_values;
-  var infowindow = new google.maps.InfoWindow();
-
-  function initialize() {
-  var mapOptions = {
-    zoom: 10,
-    center: new google.maps.LatLng(0,0),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  }
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-                                mapOptions);
-
-  setMarkers(map, beaches);
-}
-
-
-function setMarkers(map, locations) {
-
-  for (var i = 0; i < locations.length; i++) {
-    var beach = locations[i];
-    var myLatLng = new google.maps.LatLng(beach[0], beach[1]);
-    setMarker(map, locations[i])    
-  }
-  
-}
-
-/*https://developers.google.com/maps/documentation/javascript/examples/icon-complex?hl=fr-FR */
-
-
-function setMarker(map, cordinates) {  
-    var bounds = new google.maps.LatLngBounds();   
-    var p=cordinates;
-    var lat = p[0]
-    var lng = p[1]
-    var latlng = new google.maps.LatLng(lat, lng);
-    geocoder = new google.maps.Geocoder();
-
-    geocoder.geocode( {'latLng': latlng}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-
-            var marker = new google.maps.Marker({
-                position: latlng,
-                map: map
-            });
-
-
-            var contentString = "Some content";
-
-            google.maps.event.addListener(marker, "click", function () {
-                infowindow.setContent(results[0].formatted_address);
-                infowindow.open(map, marker)
-            });
-        } 
-        else {
-            alert("Geocode was not successful for the following reason: " + status);
-        }
-    });  
-}
-google.maps.event.addDomListener(window, 'load', initialize);  
+ 
 
 <% end %>
  
